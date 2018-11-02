@@ -17,7 +17,7 @@ public class Girl {
 
     private String Cupsize;
 
-    private Girl() {
+    public Girl() {
 
     }
 
