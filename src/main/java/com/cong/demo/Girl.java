@@ -1,11 +1,14 @@
 package com.cong.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 
 @Entity
+@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler"})
 public class Girl {
     @Id
     @GeneratedValue

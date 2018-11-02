@@ -1,10 +1,7 @@
 package com.cong.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,12 @@ public class GirlController {
         girl.setName(name);
         girlReposiory.save(girl);
         return girl.getName();
+
+    }
+
+    @GetMapping(value = "/findgirl/{id}")
+    public Girl FindGirl(@PathVariable("id") Integer id){
+        return girlReposiory.getOne(id);
 
     }
 }
